@@ -7,11 +7,72 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-   
+
     <title>Google search page</title>
     
     <style>
-         p {
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        li {
+            display: inline;
+            float: right;
+        }
+
+        a {
+            display: block;
+            padding: 8px;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+        
+        #header {
+            display: flex;
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+            
+        #center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #buttons {
+            display: flex;
+            position: absolute;
+            left: 42%;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+        }
+        
+        #buttons2 {
+            display: flex;
+            position: absolute;
+            left: 44%;
+            top: 300px;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+        }
+
+        #buttonwithoutborders {
+            border: 0px;
+            background-color: transparent;
+            color: blue;
+            width: 70px;
+            height: 50px;
+        }
+
+        p {
             text-align: center;
             font-family: 'Roboto', sans-serif;
             font-size: 12px;
@@ -31,17 +92,8 @@
             height: 30px;
             left: 500px;
         }
-        
-        .center {
-            display: flex;
-            flex-direction: column-reverse;
-            text-align: center;
-        }
 
-        .buttons {
-            display: flex;
-            align-items: flex-end;
-        }
+        -webkit-appearance: none;
 
     </style>
 
@@ -49,24 +101,35 @@
 
 <body>
 
-<div id="header">
-    <span class="material-icons">apps</span>
-</div>
+<ul>
+  <li><a href="https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Sign In</a></li>
+  <li><span class="material-icons">apps</span></li>
+  <li><a href="https://www.google.com.ua/imghp?hl=en&ogbl">Images</a></li>
+  <li><a href="https://www.google.com/gmail/about/">Gmail</a></li>
+</ul>
+
+
 
 <div id="center">
     <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
     <span class="material-icons">search</span>
     <span class="material-icons">mic</span>
     <input type="text">
-    <p>Google offered in:</p>
-    <button>Google Search</button>
-    <button>I'm feeling lucky</button>
+   
 </div>
 
 <a href="#PLATZHALTER FUER GOOGLE BUTTON LINKS!"></a>
 
 
 <div id="buttons">
+    <button style="left: 500px;">Google Search</button>
+    <button>I'm Feeling Lucky</button>
+</div>
+
+<div id="buttons2">
+    <p>Google offered in:</p>
+    <button id="buttonwithoutborders">українська</button>
+    <button id="buttonwithoutborders">русский</button>
 </div>
 
 <hr>
