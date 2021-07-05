@@ -11,33 +11,81 @@
     <title>Google search page</title>
     
     <style>
-        ul {
+        #navbartop {
             list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbartopli {
+            display: inline;
+            float: right;
+            padding: 5px;
+            font-family: 'Roboto';
+            font-size: 13px;
+        }
+
+        #navbartopli:hover {
+            text-decoration: underline blue;
+        }
+
+        #footer1 {
+            display: inline;
+            list-style-type: none;
+            float: left;
+            font-family: arial,sans-serif;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
             margin: 0;
             padding: 0;
             
         }
 
-        li {
+        #footerli1 {
+            display: inline;
+            float: left;
+            padding: 5px;
+        }
+
+        #footer2 {
+            display: inline;
+            list-style-type: none;
+            float: right;
+            font-family: arial,sans-serif;
+            font-size: 14px;
+            position: absolute; 
+            right: 0; 
+            bottom: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #footerli2 {
             display: inline;
             float: right;
+            padding: 5px;
+        
+        }
+
+        #footerli1:hover {
+            text-decoration: underline blue;
+        }
+
+        #footerli2:hover {
+            text-decoration: underline blue;
         }
 
         a {
             display: block;
             padding: 8px;
+            text-decoration: none;
         }
 
         li a:hover {
             text-decoration: underline;
         }
-        
-        #header {
-            display: flex;
-            flex-direction: row-reverse;
-            text-align: right;
-        }
-            
+           
         #center {
             display: flex;
             flex-direction: column;
@@ -45,7 +93,7 @@
             text-align: center;
         }
 
-        #buttons {
+        #buttonsection1 {
             display: flex;
             position: absolute;
             left: 42%;
@@ -53,8 +101,17 @@
             align-items: center;
             text-align: center;
         }
-        
-        #buttons2 {
+
+        #buttons1 {
+            border-radius: 4px;
+        }
+
+        #buttons1:hover {
+            border: solid 1px;
+            border-color: rgb(197, 197, 197);
+        }
+
+        #buttonsection2 {
             display: flex;
             position: absolute;
             left: 44%;
@@ -70,6 +127,10 @@
             color: blue;
             width: 70px;
             height: 50px;
+        }
+
+        #buttonwithoutborders:hover {
+            text-decoration: underline blue;
         }
 
         p {
@@ -91,6 +152,11 @@
             width: 150px;
             height: 30px;
             left: 500px;
+            border: 5px;
+        }
+
+        body {
+        height: 100%;
         }
 
         -webkit-appearance: none;
@@ -101,14 +167,12 @@
 
 <body>
 
-<ul>
-  <li><a href="https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Sign In</a></li>
-  <li><span class="material-icons">apps</span></li>
-  <li><a href="https://www.google.com.ua/imghp?hl=en&ogbl">Images</a></li>
-  <li><a href="https://www.google.com/gmail/about/">Gmail</a></li>
+<ul id="navbartop">
+  <li id="navbartopli"><a style="background: #4285F4; text-decoration: none; color: white; font-family: 'Roboto', sans-serif; width: 75px; text-align: center; border-radius: 5px;" href="https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Sign In</a></li>
+  <li id="navbartopli"><span class="material-icons" style="position: relative; top: 5px;">apps</span></li>
+  <li id="navbartopli" id="underlinedlinks"><a style="text-decoration: none; color: black" href="https://www.google.com.ua/imghp?hl=en&ogbl" >Images</a></li>
+  <li id="navbartopli" id="underlinedlinks"><a style="text-decoration: none; color: black" href="https://www.google.com/gmail/about/">Gmail</a></li>
 </ul>
-
-
 
 <div id="center">
     <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
@@ -118,23 +182,34 @@
    
 </div>
 
-<a href="#PLATZHALTER FUER GOOGLE BUTTON LINKS!"></a>
-
-
-<div id="buttons">
-    <button style="left: 500px;">Google Search</button>
-    <button>I'm Feeling Lucky</button>
+<div id="buttonsection1">
+    <button id="buttons1">Google Search</button>
+    <button id="buttons1">I'm Feeling Lucky</button>
 </div>
 
-<div id="buttons2">
+<div id="buttonsection2">
     <p>Google offered in:</p>
-    <button id="buttonwithoutborders">українська</button>
-    <button id="buttonwithoutborders">русский</button>
+    <button id="buttonwithoutborders"><a href="https://www.google.com.ua/">українська</a></button>
+    <button id="buttonwithoutborders"><a href="https://www.google.ru/">русский</a></button>
 </div>
 
 <hr>
 
-<div></div>
+<ul id="footer1">
+  <li id="footerli1"><a style="text-decoration: none; color: black" href="https://about.google/?utm_source=google-UA&utm_medium=referral&utm_campaign=hp-footer&fg=1">About</a></li>
+  <li id="footerli1"><a style="text-decoration: none; color: black" href="https://ads.google.com/intl/en_ua/home/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1">Advertising</a></li>
+  <li id="footerli1"><a style="text-decoration: none; color: black" href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1">Business</a></li>
+  <li id="footerli1"><a style="text-decoration: none; color: black" href="https://www.google.com/search/howsearchworks/?fg=1">How Search Works</a></li>
+</ul>
+
+<ul id="footer2">
+  <li id="footerli2"><a style="text-decoration: none; color: black" href="https://www.google.com/gmail/about/">Terms</a></li>
+  <li id="footerli2"><a style="text-decoration: none; color: black" href="https://policies.google.com/terms?hl=en-UA&fg=1">Settings</a></li>
+  <li id="footerli2"><a style="text-decoration: none; color: black" href="https://policies.google.com/privacy?hl=en-UA&fg=1">Privacy</a></li>
+</ul>
+
+
+background-color: #70757a; FARBE FUER HINTERGRUND UNTEN
 
 </body>
 </html>
