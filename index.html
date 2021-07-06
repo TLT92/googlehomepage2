@@ -11,114 +11,139 @@
     <title>Google search page</title>
     
     <style>
+        body {
+            width: 99vw;
+            height: 100vw;
+            display: grid;
+            grid-template-areas:
+             "navbartop1 navbartop2 navbartop3"
+             "center1 center2 center3"
+             "footer1 footer2 footer3"
+        }
+        
         #navbartop {
+            grid-area: navbartop3;
             list-style-type: none;
             margin: 0;
             padding: 0;
         }
 
-        #navbartopli {
-            display: inline;
+        #navbartopli1 {
             float: right;
             padding: 5px;
             font-family: 'Roboto';
             font-size: 13px;
         }
 
-        #navbartopli:hover {
+        #navbartopli2 {
+            float: right;
+            padding: 5px;
+            font-family: 'Roboto';
+            font-size: 13px;
+        }
+
+        #navbartopli1:hover {
             text-decoration: underline blue;
         }
 
         #footer1 {
-            display: inline;
-            list-style-type: none;
-            float: left;
+            grid-area: footer1;
+            float: right;
             font-family: arial,sans-serif;
             font-size: 14px;
-            position: fixed;
-            bottom: 0;
-            margin: 0;
-            padding: 0;
-            
         }
 
-        #footerli1 {
-            display: inline;
-            float: left;
-            padding: 5px;
-        }
+            #footerli1 {
+                display: inline;
+                float: left;
+                padding: 5px;
+            }
 
         #footer2 {
-            display: inline;
-            list-style-type: none;
+            grid-area: footer3;
             float: right;
             font-family: arial,sans-serif;
             font-size: 14px;
-            position: absolute; 
-            right: 0; 
-            bottom: 0;
-            margin: 0;
-            padding: 0;
         }
 
-        #footerli2 {
-            display: inline;
-            float: right;
-            padding: 5px;
-        
-        }
+            #footerli2 {
+                display: inline;
+                float: right;
+                padding: 5px;
+            
+            }
 
-        #footerli1:hover {
-            text-decoration: underline blue;
-        }
+                #footerli1:hover {
+                    text-decoration: underline blue;
+                }
 
-        #footerli2:hover {
-            text-decoration: underline blue;
-        }
+                #footerli2:hover {
+                    text-decoration: underline blue;
+                }
 
-        a {
-            display: block;
-            padding: 8px;
-            text-decoration: none;
-        }
+                a {
+                    display: block;
+                    padding: 8px;
+                    text-decoration: none;
+                }
 
-        li a:hover {
-            text-decoration: underline;
-        }
+                li a:hover {
+                    text-decoration: underline;
+                }
            
         #center {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            grid-area: center2;
+            display: grid;
+            grid-template-columns: 50px;
+            grid-template-rows: 50px 50px 50px;
         }
 
         #buttonsection1 {
-            display: flex;
-            position: absolute;
-            left: 42%;
-            flex-direction: row;
-            align-items: center;
-            text-align: center;
+            grid-area: center2;
+            display: grid;
+            grid-template-columns: 150px 150px 150px;
+            grid-template-rows: 50px 50px;
+            grid-column-gap: 10px;
+            justify-items: center;
+            grid-template-areas:
+             "empty1 googlelogo empty2"
+             "logo1 searchbar logo2"
+             "empty3 button1 button2"
+             "text1 languagelink1 languagelink2"
         }
 
-        #buttons1 {
-            border-radius: 4px;
-        }
+                #buttons1 {
+                    border-radius: 4px;
+                    
+                }
 
-        #buttons1:hover {
-            border: solid 1px;
-            border-color: rgb(197, 197, 197);
-        }
+                .buttons1 {
+                    grid-area: button1;
+                }
 
-        #buttonsection2 {
-            display: flex;
-            position: absolute;
-            left: 44%;
-            top: 300px;
-            flex-direction: row;
-            align-items: center;
-            text-align: center;
+                .buttons2 {
+                    grid-area: button2;
+                }
+
+                .languagetext {
+                    grid-area: text1;
+                }
+
+                .language1 {
+                    grid-area: languagelink1;
+                }
+
+                .language2 {
+                    grid-area: languagelink2;
+                }
+
+                #buttons1:hover {
+                    border: solid 1px;
+                    border-color: rgb(197, 197, 197);
+                }
+
+        #text {
+        grid-column: 1 / 2;
         }
 
         #buttonwithoutborders {
@@ -168,32 +193,27 @@
 <body>
 
 <ul id="navbartop">
-  <li id="navbartopli"><a style="background: #4285F4; text-decoration: none; color: white; font-family: 'Roboto', sans-serif; width: 75px; text-align: center; border-radius: 5px;" href="https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Sign In</a></li>
-  <li id="navbartopli"><span class="material-icons" style="position: relative; top: 5px;">apps</span></li>
-  <li id="navbartopli" id="underlinedlinks"><a style="text-decoration: none; color: black" href="https://www.google.com.ua/imghp?hl=en&ogbl" >Images</a></li>
-  <li id="navbartopli" id="underlinedlinks"><a style="text-decoration: none; color: black" href="https://www.google.com/gmail/about/">Gmail</a></li>
+  <li id="navbartopli2"><a style="background: #4285F4; text-decoration: none; color: white; font-family: 'Roboto', sans-serif; width: 75px; text-align: center; border-radius: 5px;" href="https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Sign In</a></li>
+  <li id="navbartopli1"><span class="material-icons" style="position: relative; top: 5px;">apps</span></li>
+  <li id="navbartopli1"><a style="text-decoration: none; color: black" href="https://www.google.com.ua/imghp?hl=en&ogbl" >Images</a></li>
+  <li id="navbartopli1"><a style="text-decoration: none; color: black" href="https://www.google.com/gmail/about/">Gmail</a></li>
 </ul>
 
 <div id="center">
+    
+</div>
+
+<div id="buttonsection1">
     <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
     <span class="material-icons">search</span>
     <span class="material-icons">mic</span>
     <input type="text">
-   
+    <button class="buttons1" id="buttons1">Google Search</button>
+    <button class="buttons2" id="buttons1">I'm Feeling Lucky</button>
+    <p class="languagetext" id="text">Google offered in:</p>
+    <li class="language1" id="navbartopli1"><a style="text-decoration: none; color: blue" href="https://www.google.com.ua/">українська</a></li>
+    <li class="language2" id="navbartopli1"><a style="text-decoration: none; color: blue" href="https://www.google.ru/">русский</a></li>
 </div>
-
-<div id="buttonsection1">
-    <button id="buttons1">Google Search</button>
-    <button id="buttons1">I'm Feeling Lucky</button>
-</div>
-
-<div id="buttonsection2">
-    <p>Google offered in:</p>
-    <button id="buttonwithoutborders"><a href="https://www.google.com.ua/">українська</a></button>
-    <button id="buttonwithoutborders"><a href="https://www.google.ru/">русский</a></button>
-</div>
-
-<hr>
 
 <ul id="footer1">
   <li id="footerli1"><a style="text-decoration: none; color: black" href="https://about.google/?utm_source=google-UA&utm_medium=referral&utm_campaign=hp-footer&fg=1">About</a></li>
@@ -208,8 +228,6 @@
   <li id="footerli2"><a style="text-decoration: none; color: black" href="https://policies.google.com/privacy?hl=en-UA&fg=1">Privacy</a></li>
 </ul>
 
-
-background-color: #70757a; FARBE FUER HINTERGRUND UNTEN
 
 </body>
 </html>
