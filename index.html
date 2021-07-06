@@ -18,7 +18,9 @@
             grid-template-areas:
              "navbartop1 navbartop2 navbartop3"
              "center1 center2 center3"
-             "footer1 footer2 footer3"
+             "footer1 footer2 footer3";
+            grid-template-rows: 290px 290px 290px;
+            grid-template-columns: 400px 400px 400px;
         }
         
         #navbartop {
@@ -90,61 +92,17 @@
                 li a:hover {
                     text-decoration: underline;
                 }
-           
-        #center {
-            grid-area: center2;
-            display: grid;
-            grid-template-columns: 50px;
-            grid-template-rows: 50px 50px 50px;
-        }
 
         #buttonsection1 {
-            grid-area: center2;
-            display: grid;
-            grid-template-columns: 150px 150px 150px;
-            grid-template-rows: 50px 50px;
-            grid-column-gap: 10px;
+            grid-area: 
             justify-items: center;
-            grid-template-areas:
-             "empty1 googlelogo empty2"
-             "logo1 searchbar logo2"
-             "empty3 button1 button2"
-             "text1 languagelink1 languagelink2"
         }
-
-                #buttons1 {
-                    border-radius: 4px;
-                    
-                }
-
-                .buttons1 {
-                    grid-area: button1;
-                }
-
-                .buttons2 {
-                    grid-area: button2;
-                }
-
-                .languagetext {
-                    grid-area: text1;
-                }
-
-                .language1 {
-                    grid-area: languagelink1;
-                }
-
-                .language2 {
-                    grid-area: languagelink2;
-                }
-
+       
                 #buttons1:hover {
                     border: solid 1px;
                     border-color: rgb(197, 197, 197);
                 }
 
-        #text {
-        grid-column: 1 / 2;
-        }
 
         #buttonwithoutborders {
             border: 0px;
@@ -158,6 +116,13 @@
             text-decoration: underline blue;
         }
 
+
+        img {
+            position: absolute;
+            left: 36%;
+            top: 28%;
+        }
+
         p {
             text-align: center;
             font-family: 'Roboto', sans-serif;
@@ -165,12 +130,13 @@
         }
         
         input {
+            position: relative;
+            left: 8%;
+            top: 12%;
             border-radius: 12px;
             border-width: 1px;
             height: 30px;
             width: 600px;
-            left: 900px;
-            bottom: 400px;
         }
 
         button {
